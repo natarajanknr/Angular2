@@ -1,0 +1,19 @@
+<div>
+	<h2>{{projectName}}</h2>
+	<hr/>
+	<h2>Two way Data binding </h2>
+	<label> FirstName : </label> 
+	<input type="text" value={{firstname}} required [(ngModel)] = "fname"> {{fname}}<br/><br/>
+	<hr>
+	<h2>Contact Form</h2>
+	<form [formGroup]="form">
+		<label> FirstName : </label> 
+		<input type="text" value={{firstname}} required formControlName="firstname"><br/><br/>
+		<label> LastName : </label> 
+		<input type="text" name="lastname" required formControlName="lastname" ><br/><br/>
+		<label> Eamil ID : </label> 
+		<input type="text" name="lastname" required formControlName="email" ><br/><br/>
+		<input type="submit" name="Submit" [disabled]="!form.valid">
+	</form>
+	<hr>
+</div>
